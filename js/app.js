@@ -20,3 +20,9 @@ setInterval(() =>{
     elGreen.style.background = 'green'
 },3000);
 
+
+document.addEventListener('contextmenu', function (p) {
+    p.preventDefault();
+    alert("Kod ni ko'chirish mumkinmas !!!");
+});
+
