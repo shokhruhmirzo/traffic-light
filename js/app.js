@@ -26,3 +26,18 @@ document.addEventListener('contextmenu', function (p) {
     alert("Kod ni ko'chirish mumkinmas !!!");
 });
 
+window.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.shiftKey && event.code === 'KeyI') {
+        event.preventDefault(); 
+        alert('ctrl + shift + i bosish mumkinmas !');
+    }
+});
+
+window.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.code === 'KeyU') {
+        event.preventDefault();
+        alert('ctrl + U bosish mumkinmas !');
+    }
+});
+
+
