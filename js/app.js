@@ -33,10 +33,30 @@ window.addEventListener('keydown', function(event) {
     }
 });
 
+var isCtrlPressed = false; // Ctrl tugmasi bosilgani aniqlansin
+
+// Ctrl tugmasi bosilganda
 window.addEventListener('keydown', function(event) {
-    if (event.ctrlKey && event.code === 'KeyU') {
+    if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
+        isCtrlPressed = true;
+    }
+});
+
+// Ctrl tugmasi bosilmaganida
+window.addEventListener('keyup', function(event) {
+    if (event.code === 'ControlLeft' || event.code === 'ControlRight') {
+        isCtrlPressed = false;
+    }
+});
+
+// U tugmasi bosilganda
+window.addEventListener('keydown', function(event) {
+    // Agar Ctrl tugmasi bosilgan bo'lsa va U tugmasi bosilgan bo'lsa
+    if (isCtrlPressed && event.code === 'KeyU') {
+        // Brauzerda kodni ko'rishni to'xtatamiz
         event.preventDefault();
-        alert('ctrl + U bosish mumkinmas !');
+        // Foydalanuvchiga xabar chiqaramiz
+        alert('Kodni ko\'chirish mumkin emas!');
     }
 });
 
